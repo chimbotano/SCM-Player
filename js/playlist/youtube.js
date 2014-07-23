@@ -8,7 +8,7 @@ define(['jquery','song'],function($,Song){
 	return {
 		load:function(url, req, callback, config){
 			var playlistURL = 'http://gdata.youtube.com/feeds/api/playlists/'+
-				parseId(url)+'?v=2&alt=json&max-results=50&callback=?';
+				parseId(url)+'?v=2&alt=json&max-results=150&callback=?';
 			$.getJSON(playlistURL, function(data) {
 				callback($.map(data.feed.entry,function(item){
 					return new Song({
